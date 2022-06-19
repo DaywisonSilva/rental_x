@@ -1,7 +1,5 @@
 import Category from '@model/Category'
 
-// DTO => Data transfer object
-
 interface ICreateCategoryDTO {
     name: string
     description: string
@@ -18,6 +16,14 @@ class CategoriesRepository {
         const category = new Category(name, description, new Date())
 
         this.categories.push(category)
+    }
+
+    list(): Category[] {
+        return this.categories
+    }
+
+    findByName(name: string): Category {
+        return this.categories.find(categoryItem => categoryItem.name === name)
     }
 }
 
