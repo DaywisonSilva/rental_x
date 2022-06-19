@@ -9,7 +9,13 @@
             "request": "attach",
             "name": "Launch Program",
             "skipFiles": ["<node_internals>/**"],
-            "outFiles": ["${workspaceFolder}/**/*.js"]
+            "outFiles": ["${workspaceFolder}/**/*.js"],
+            "runtimeArgs": [
+                "-r",
+                "${workspaceFolder}/functions/node_modules/ts-node/register",
+                "-r",
+                "${workspaceFolder}/functions/node_modules/tsconfig-paths/register"
+            ]
         }
     ]
 }
